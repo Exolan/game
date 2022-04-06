@@ -1,0 +1,25 @@
+.header {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.header_txt {
+  font-family: "Press Start 2P", cursive;
+  font-size: 40px;
+  color: blueviolet;
+  -webkit-text-stroke: 1.5px black;
+}
+
+.conteiner {
+  display: grid;
+  background-color: aquamarine;
+  width: max-content;
+  height: max-content;
+  grid-template-columns: 2fr;
+}
+.card {
+  width: 200px;
+  height: 200px;
+}
