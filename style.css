@@ -1,3 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(187, 166, 255);
+  background: url(/background/4.png) 0 0 repeat;
+}
+
+.conteiner {
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  background: url(/background/186.jpg) 0 0 repeat;
+  width: 1200px;
+  height: 600px;
+  box-shadow: 20px 15px 10px 5px rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  border: 10px solid black;
+  height: max-content;
+}
+
 .header {
   margin-top: 20px;
   display: flex;
@@ -8,18 +34,26 @@
 .header_txt {
   font-family: "Press Start 2P", cursive;
   font-size: 40px;
-  color: blueviolet;
-  -webkit-text-stroke: 1.5px black;
+  color: rgb(57, 202, 0);
+  -webkit-text-stroke: 1.5px rgb(0, 87, 12);
+}
+.box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  height: 62%;
+  box-shadow: 20px 15px 10px 5px rgba(0, 0, 0, 0.8);
 }
 
-.conteiner {
+.canvas {
   display: grid;
-  background-color: aquamarine;
-  width: max-content;
   height: max-content;
-  grid-template-columns: 2fr;
+  background-color: rgb(66, 66, 66);
+  grid-template-columns: repeat(4, 1fr);
+  border: 10px solid rgb(27, 27, 27);
 }
 .card {
-  width: 200px;
-  height: 200px;
+  margin: 10px 10px;
+  width: 160px;
+  height: 160px;
 }
