@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*  */
+/*  */
+/*  */
+/* STYLE FOR MENU */
+/*  */
+/*  */
+/*  */
+.body_menu {
+  background: url(/menu/back/back_menu.png);
+  background-size: 100%;
+}
+.header_menu {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.header_menu_text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 50px;
+  color: green;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+}
+.conteiner_menu {
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+.div_select {
+  margin-left: 90px;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+.select_text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 40px;
+  color: green;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+  position: absolute;
+}
+.div_level {
+  display: flex;
+  width: 900px;
+  height: 500px;
+  border: 10px solid black;
+}
+.menu_start {
+  position: absolute;
+  margin-top: 400px;
+  margin-right: 300px;
+  width: 300px;
+  height: 80px;
+  border: 6px solid black;
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+.menu_level {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 200px;
+  width: 100px;
+  height: 80px;
+  border: 6px solid black;
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+.select_value {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 500px;
+  width: 100px;
+  height: 80px;
+  border: 6px solid black;
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+  padding: 7px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+.information {
+  margin-right: 20px;
+  display: grid;
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
+.rules {
+  display: grid;
+  width: 750px;
+  height: 200px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: url(/menu/back/desk.png);
+  border: 10px solid black;
+}
+.rules_header {
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 30px;
+  color: green;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+}
+.rules_text {
+  margin-top: 30px;
+  width: 750px;
+  height: 550px;
+  text-align: center;
+  line-height: 20px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  color: #67e667;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+}
+.info_level {
+  display: grid;
+  width: 750px;
+  height: 200px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: url(/menu/back/desk.png);
+  border: 10px solid black;
+}
+.info_header {
+  margin-top: 10px;
+  text-align: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 30px;
+  color: green;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+}
+.info_text {
+  margin-top: 30px;
+  width: 750px;
+  height: 550px;
+  text-align: center;
+  line-height: 25px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 20px;
+  color: #67e667;
+  -webkit-text-stroke: 1.5px rgb(0, 0, 0);
+  white-space: break-all;
+}

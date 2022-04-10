@@ -1,9 +1,30 @@
 (function () {
   const box = document.querySelector(".box");
+  const name = Object.keys(localStorage)[0];
+  window.name = name;
+  const back = document.querySelector(".body_game");
+  back.style.background = `url(/background/${name}.png)`;
+  const num = localStorage.getItem(Object.keys(localStorage)[0]);
+  const exit = document.querySelector(".button_exit");
+  const timer = document.querySelector(".timer");
+  if (num == 4) {
+    timer.textContent = "10";
+  } else if (num == 8) {
+    timer.textContent = "20";
+  } else if (num == 12) {
+    timer.textContent = "30";
+  } else if (num == 16) {
+    timer.textContent = "40";
+  }
+
+  let firstArray = [];
+  let secondArray = [];
+  for (let i = 0; i < num / 2; i++) {
+    firstArray.push(i);
+    secondArray.push(i);
+  }
 
   function randomArray() {
-    let firstArray = [1, 2, 3, 4, 5, 6];
-    let secondArray = [1, 2, 3, 4, 5, 6];
     firstArray.sort(() => Math.random() - 0.5);
     secondArray.sort(() => Math.random() - 0.5);
     let array = [];
@@ -40,23 +61,31 @@
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      if (card.id == "1") {
-        card.style.background = "url(/cards/1.png)";
-      } else if (card.id == "2") {
-        card.style.background = "url(/cards/2.png)";
-      } else if (card.id == "3") {
-        card.style.background = "url(/cards/3.png)";
-      } else if (card.id == "4") {
-        card.style.background = "url(/cards/4.png)";
-      } else if (card.id == "5") {
-        card.style.background = "url(/cards/5.png)";
-      } else if (card.id == "6") {
-        card.style.background = "url(/cards/6.png)";
+      if (card.id == 1) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 2) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 3) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 4) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 5) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 6) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 7) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 8) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 9) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
+      } else if (card.id == 0) {
+        card.style.background = `url(/cards/${name}/${card.id}.png) 0 0 repeat`;
       }
+
       card.setAttribute("disabled", "disabled");
 
       arraySelectCards.push(card);
-      console.log(arraySelectCards);
       twoCards(cards);
       won(cards);
     });
@@ -103,10 +132,51 @@
     if (arrayTrueCards.length == cards.length) {
       setTimeout(() => {
         alert("You won!");
+        // localStorage.setItem("Score", timer.textContent);
         if (confirm("Вы желаете переиграть?")) {
           window.location.reload();
+        } else {
+          localStorage.removeItem(Object.keys(localStorage)[0]);
+          window.location.href = "/menu.html";
         }
       });
     }
   }
+
+  exit.addEventListener("click", () => {
+    if (confirm("Вы точно хотите вернуться?")) {
+      window.location.href = "/menu.html";
+      localStorage.removeItem(Object.keys(localStorage)[0]);
+    }
+  });
+
+  let time;
+  clearInterval(time);
+  time = setInterval(function () {
+    timer.textContent = parseInt(timer.textContent) - 1;
+    if (timer.textContent == 0) {
+      if (confirm("Время вышло. Вы желаете переиграть?")) {
+        window.location.reload();
+      } else {
+        localStorage.removeItem(Object.keys(localStorage)[0]);
+        window.location.href = "/menu.html";
+      }
+    }
+  }, 1000);
+
+  // let time;
+  // box.addEventListener("click", () => {
+  //   clearInterval(time);
+  //   time = setInterval(() => {
+  //     timer.textContent = parseInt(timer.textContent) - 1;
+  //     if (timer.textContent == 0) {
+  //       if (confirm("Время вышло. Вы желаете переиграть?")) {
+  //         window.location.reload();
+  //       } else {
+  //         localStorage.removeItem(Object.keys(localStorage)[0]);
+  //         window.location.href = "/menu.html";
+  //       }
+  //     }
+  //   }, 1000);
+  // });
 })();
