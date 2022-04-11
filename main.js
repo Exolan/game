@@ -1,12 +1,27 @@
 (function () {
   const box = document.querySelector(".box");
-  const name = Object.keys(localStorage)[0];
+
+  let name;
+  for (let i = 0; i < Object.keys(localStorage).length; i++) {
+    if (
+      Object.keys(localStorage)[i] == "Forest" ||
+      Object.keys(localStorage)[i] == "Fantasy" ||
+      Object.keys(localStorage)[i] == "Sea" ||
+      Object.keys(localStorage)[i] == "Beetles"
+    ) {
+      name = Object.keys(localStorage)[i];
+    }
+  }
   window.name = name;
+
   const back = document.querySelector(".body_game");
   back.style.background = `url(/background/${name}.png)`;
-  const num = localStorage.getItem(Object.keys(localStorage)[0]);
+
   const exit = document.querySelector(".button_exit");
+
+  const num = localStorage.getItem(name);
   const timer = document.querySelector(".timer");
+  window.num = num;
   if (num == 4) {
     timer.textContent = "10";
   } else if (num == 8) {
@@ -16,6 +31,8 @@
   } else if (num == 16) {
     timer.textContent = "40";
   }
+  let firstTime = timer.textContent;
+  window.firstTime = firstTime;
 
   let firstArray = [];
   let secondArray = [];
@@ -132,21 +149,24 @@
     if (arrayTrueCards.length == cards.length) {
       setTimeout(() => {
         alert("You won!");
-        // localStorage.setItem("Score", timer.textContent);
+        const time = parseInt(firstTime) - timer.textContent;
+        if (time > localStorage.getItem(`Score${name}${num}`)) {
+          localStorage.setItem(`Score${name}${num}`, time);
+        }
         if (confirm("Вы желаете переиграть?")) {
           window.location.reload();
         } else {
-          localStorage.removeItem(Object.keys(localStorage)[0]);
+          localStorage.removeItem(name);
           window.location.href = "/menu.html";
         }
-      });
+      }, 200);
     }
   }
 
   exit.addEventListener("click", () => {
     if (confirm("Вы точно хотите вернуться?")) {
       window.location.href = "/menu.html";
-      localStorage.removeItem(Object.keys(localStorage)[0]);
+      localStorage.removeItem(name);
     }
   });
 
@@ -158,25 +178,9 @@
       if (confirm("Время вышло. Вы желаете переиграть?")) {
         window.location.reload();
       } else {
-        localStorage.removeItem(Object.keys(localStorage)[0]);
+        localStorage.removeItem(name);
         window.location.href = "/menu.html";
       }
     }
   }, 1000);
-
-  // let time;
-  // box.addEventListener("click", () => {
-  //   clearInterval(time);
-  //   time = setInterval(() => {
-  //     timer.textContent = parseInt(timer.textContent) - 1;
-  //     if (timer.textContent == 0) {
-  //       if (confirm("Время вышло. Вы желаете переиграть?")) {
-  //         window.location.reload();
-  //       } else {
-  //         localStorage.removeItem(Object.keys(localStorage)[0]);
-  //         window.location.href = "/menu.html";
-  //       }
-  //     }
-  //   }, 1000);
-  // });
 })();

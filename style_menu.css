@@ -10,8 +10,8 @@
 /*  */
 /*  */
 .body_menu {
-  background: url(/menu/back/back_menu.png);
-  background-size: 100%;
+  background: url(/menu/back/back_menu.png) no-repeat;
+  background-size: 100% 200%;
 }
 .header_menu {
   margin-top: 40px;
@@ -89,6 +89,28 @@
   font-family: "Press Start 2P", cursive;
   font-size: 15px;
   padding: 7px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+.score {
+  position: absolute;
+  width: 150px;
+  height: 80px;
+  border: 6px solid black;
+  margin-right: 700px;
+  margin-bottom: 370px;
+  background-color: white;
+}
+.score_text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+.score_result {
+  margin-top: 20px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 15px;
   text-align: center;
   color: rgb(0, 0, 0);
 }
